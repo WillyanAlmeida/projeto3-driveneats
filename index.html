@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Driven EATS</title>
   </head>
-  <body></body>
+  <body>
+    <div class="topo">
+        <h1>Driven EATS</h1>
+        <h2>Monte seu box e receba em 6 minutos!</h2>
+      </div>
+      <div class="main">
+      <h3>Primeiro, seu prato</h3>
+      <div class="prato">
+      <div id="frango" class="produto" onclick="selecionarfrango()">
+        <img src="./img/frango_yin_yang.png"/>
+        <h4>Frango Yin-Yang</h4>
+        <p>Um pouco de batata, um pouco de Salada</p>
+        <p>R$ 14,90</p>
+      </div>
+      <div id="carne" class="produto" onclick="selecionarcarne()">
+        <img src="./img/carne.jpg"/>
+        <h4>Carne e Salada</h4>
+        <p>Um pouco de batata, um pouco de Salada</p>
+        <p>R$ 23,90</p>
+      </div>
+      <div id="peixe" class="produto" onclick="selecionarpeixe()">
+        <img src="./img/peixe.jpg"/>
+        <h4>Peixe e Salada</h4>
+        <p>Um pouco de batata, um pouco de Salada</p>
+        <p>R$ 33,90</p>
+      </div>
+    </div>
+      <h3>Agora sua bebida</h3>
+    </div> 
+  </body>
+ </html>
 </html>
