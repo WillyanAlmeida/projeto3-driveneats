@@ -79,14 +79,16 @@
                 <p><strong>R$ 4,00</strong></p>
             </div>
         </div>
-        
-
     </div>
     <div class="base">
-        <div class="finalizar" onclick="finalizarpedido()">
-            <p>Selecione os 3 itens para fechar o pedido</p>
+        <div id="finalizar" class="finalizar" onclick="finalizarpedido()">
+            <p>Selecione os  itens para fechar o pedido</p>
+            
         </div>
     </div>
+    <script src="./script.js">
+        finalizar.innerHTML = ${valortotal}
+    </script>
 </body>
 
 </html>
