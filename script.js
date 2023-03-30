@@ -6,27 +6,37 @@ let valorprato=0;
 let valorbebida=0;
 let valorsobremesa=0;
 let valortotal=0;
+const x0=3;
+let x1=3;
+let x2=0;
+let x3=0;
+let x4=0;
+let conteudofecharpedido = "Selecione os " +x1+ " itens para fechar o pedido";
+document.getElementById("fecharpedido").innerHTML = conteudofecharpedido;
 function selecionarfrango(){
     document.getElementById("frango").style.borderColor = "green";
     document.getElementById("carne").style.borderColor = "white";
     document.getElementById("peixe").style.borderColor = "white";
     prato = "frango";
-    valorprato = 20.9;
-
+    valorprato = 20;
+    x2 = 1; 
+   
 }
 function selecionarcarne() {
     document.getElementById("carne").style.borderColor = "green";
     document.getElementById("frango").style.borderColor = "white";
     document.getElementById("peixe").style.borderColor = "white";
     prato = "carne";
-    valorprato = 30.9;
+    valorprato = 30;
+    x2 = 1; 
 }
 function selecionarpeixe() {
     document.getElementById("peixe").style.borderColor = "green";
     document.getElementById("frango").style.borderColor = "white";
     document.getElementById("carne").style.borderColor = "white";
     prato = "peixe";
-    valorprato = 35.9;
+    valorprato = 35;
+    x2 = 1; 
 }
 
 function selecionarcoca(){
@@ -35,6 +45,7 @@ function selecionarcoca(){
     document.getElementById("agua").style.borderColor = "white";
     bebida = "coca";
     valorbebida = 6.5;
+    x3 = 1;
 }
 function selecionarsuco() {
     document.getElementById("suco").style.borderColor = "green";
@@ -42,6 +53,7 @@ function selecionarsuco() {
     document.getElementById("agua").style.borderColor = "white";
     bebida = "suco";
     valorbebida = 10;
+    x3 = 1;
 }
 function selecionaragua() {
     document.getElementById("agua").style.borderColor = "green";
@@ -49,6 +61,7 @@ function selecionaragua() {
     document.getElementById("coca").style.borderColor = "white";
     bebida = "agua";
     valorbebida = 4;
+    x3 = 1;
 }
 
 function selecionarpudim(){
@@ -57,6 +70,7 @@ function selecionarpudim(){
     document.getElementById("brigadeiro").style.borderColor = "white";
     sobremesa = "pudim";
     valorsobremesa = 6.5;
+    x4 = 1;
 }
 function selecionarbrigadeiro() {
     document.getElementById("brigadeiro").style.borderColor = "green";
@@ -64,6 +78,7 @@ function selecionarbrigadeiro() {
     document.getElementById("churros").style.borderColor = "white";
     sobremesa = "brigadeiro";
     valorsobremesa = 5;
+    x4 = 1;
 }
 function selecionarchurros() {
     document.getElementById("churros").style.borderColor = "green";
@@ -71,6 +86,18 @@ function selecionarchurros() {
     document.getElementById("pudim").style.borderColor = "white";
     sobremesa = "churros";
     valorsobremesa = 4;
+    x4 = 1;
 }
 
-valortotal = valorprato+valorbebida+valorsobremesa;
+function finalizar(){
+    valortotal = valorprato+valorbebida+valorsobremesa;
+    x1=x0-(x2+x3+x4);
+    conteudofecharpedido = "Selecione os " +x1+ " itens para fechar o pedido";
+    document.getElementById("fecharpedido").innerHTML = conteudofecharpedido;
+if(valorprato>0&valorbebida>0&valorsobremesa>0){
+    valortotal = valorprato+valorbebida+valorsobremesa;
+    document.getElementById("fecharpedido").innerHTML = "finalizar pedido!" + "valor total: "+valortotal;
+    document.getElementById("finalizar").style.backgroundColor = "green";
+
+}}
+

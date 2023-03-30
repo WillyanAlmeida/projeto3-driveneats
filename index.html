@@ -18,19 +18,19 @@
     <div class="main">
         <h3>Primeiro, seu prato</h3>
         <div class="prato">
-            <div id="frango" class="produto" onclick="selecionarfrango()">
+            <div id="frango" class="produto" onclick="selecionarfrango(); finalizar()">
                 <img src="./img/frango_yin_yang.png" />
                 <h4>Frango Yin-Yang</h4>
                 <p>Um pouco de batata, um pouco de Salada</p>
                 <p>R$ 20,90</p>
             </div>
-            <div id="carne" class="produto" onclick="selecionarcarne()">
+            <div id="carne" class="produto" onclick="selecionarcarne(); finalizar()">
                 <img src="./img/carne.jpg" />
                 <h4>Carne e Salada</h4>
                 <p>Um pouco de batata, um pouco de Salada</p>
                 <p>R$ 30,90</p>
             </div>
-            <div id="peixe" class="produto" onclick="selecionarpeixe()">
+            <div id="peixe" class="produto" onclick="selecionarpeixe(); finalizar()">
                 <img src="./img/peixe.jpg" />
                 <h4>Peixe e Salada</h4>
                 <p>Um pouco de batata, um pouco de Salada</p>
@@ -39,19 +39,19 @@
         </div>
         <h3>Agora sua bebida</h3>
         <div class="bebida">
-            <div id="coca" class="produto" onclick="selecionarcoca()">
+            <div id="coca" class="produto" onclick="selecionarcoca(); finalizar()">
                 <img src="./img/coca-cola.png" />
                 <h4>Coca-cola</h4>
                 <p>Normal ou Zero</p>
                 <p><strong>R$ 6,50</strong></p>
             </div>
-            <div id="suco" class="produto" onclick="selecionarsuco()">
+            <div id="suco" class="produto" onclick="selecionarsuco();finalizar()">
                 <img src="./img/suco.jpeg" />
                 <h4>Suco da fruta</h4>
                 <p>Fruta da estação</p>
                 <p><strong>R$ 10,00</strong></p>
             </div>
-            <div id="agua" class="produto" onclick="selecionaragua()">
+            <div id="agua" class="produto" onclick="selecionaragua();finalizar()">
                 <img src="./img/agua.jpeg" />
                 <h4>Àgua</h4>
                 <p>Normal ou c/ gás</p>
@@ -60,19 +60,19 @@
         </div>
         <h3>Por fim, sua sobremesa</h3>
         <div class="sobremesa">
-            <div id="pudim" class="produto" onclick="selecionarpudim()">
+            <div id="pudim" class="produto" onclick="selecionarpudim();finalizar()">
                 <img src="./img/pudim.png" />
                 <h4>Pudim</h4>
                 <p>Apenas pudim</p>
                 <p><strong>R$ 6,50</strong></p>
             </div>
-            <div id="brigadeiro" class="produto" onclick="selecionarbrigadeiro()">
+            <div id="brigadeiro" class="produto" onclick="selecionarbrigadeiro();finalizar()">
                 <img src="./img/brigadeiro.jpeg" />
                 <h4>Brigadeiro</h4>
                 <p>Chocolate 70% cacau</p>
                 <p><strong>R$ 5,00</strong></p>
             </div>
-            <div id="churros" class="produto" onclick="selecionarchurros()">
+            <div id="churros" class="produto" onclick="selecionarchurros();finalizar()">
                 <img src="./img/churros.jpeg" />
                 <h4>Churros</h4>
                 <p>Recheio de doce de leite</p>
@@ -82,13 +82,11 @@
     </div>
     <div class="base">
         <div id="finalizar" class="finalizar" onclick="finalizarpedido()">
-            <p>Selecione os  itens para fechar o pedido</p>
+            <p id="fecharpedido"></p>
             
         </div>
     </div>
-    <script src="./script.js">
-        finalizar.innerHTML = ${valortotal}
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
