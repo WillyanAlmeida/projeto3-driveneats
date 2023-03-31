@@ -11,7 +11,7 @@ let x1=3;
 let x2=0;
 let x3=0;
 let x4=0;
-let conteudofecharpedido = "Selecione os " +x1+ " itens para fechar o pedido";
+let conteudofecharpedido = "Selecione os " +x1+ " item(s) para fechar o pedido";
 document.getElementById("fecharpedido").innerHTML = conteudofecharpedido;
 function selecionarfrango(){
     document.getElementById("frango").style.borderColor = "green";
@@ -91,13 +91,19 @@ function selecionarchurros() {
 
 function finalizar(){
     valortotal = valorprato+valorbebida+valorsobremesa;
-    x1=x0-(x2+x3+x4);
-    conteudofecharpedido = "Selecione os " +x1+ " itens para fechar o pedido";
+    x1=x0-(x2+x3+x4);/* contador de items restantes para selecionar */
+    conteudofecharpedido = "Selecione os " +x1+ " item(s) restantes para fechar o pedido Valor total R$ "+valortotal;
     document.getElementById("fecharpedido").innerHTML = conteudofecharpedido;
 if(valorprato>0&valorbebida>0&valorsobremesa>0){
     valortotal = valorprato+valorbebida+valorsobremesa;
-    document.getElementById("fecharpedido").innerHTML = "finalizar pedido!" + "valor total: "+valortotal;
-    document.getElementById("finalizar").style.backgroundColor = "green";
+    document.getElementById("fecharpedido").innerHTML = "finalizar pedido! " + "Valor total: R$"+valortotal;
+    document.getElementById("finalizarpedido").style.backgroundColor = "green";
+    document.getElementById("finalizarpedido").disabled = false;
 
 }}
+function finalizarpedido(){
+
+
+
+}
 
