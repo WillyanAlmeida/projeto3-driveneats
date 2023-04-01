@@ -27,13 +27,11 @@ function selecionarprato(pratoselecionado){
     
     // buscar o novo botqo clicado
     const botao = document.querySelector(pratoselecionado);
-    //const icon = document.querySelector(pratoselecionado ,'.icons');
-    //icon = document.querySelector(icon);
-    //console.log(icon);
-    //icon.classList.toggle('icons').lastElementChild;
-    //botao.classList.toggle('icons').lastElementChild;
+    
     // adiciona a classe selecionado
     botao.classList.toggle('selecionado');
+    prato = document.querySelector('.prato .selecionado .h4').innerHTML;
+    console.log(prato);
     document.querySelector('.prato .selecionado .icon').classList.remove('icons');
     //icon.classList.toggle('icon');
     x2=1;
@@ -45,8 +43,7 @@ function selecionarprato(pratoselecionado){
         valorprato=35.9;
     }
     
-    console.log(valorprato);
-    
+   
 }
 
 
@@ -57,6 +54,7 @@ function selecionarbebida(bebidaselecionado){
     if ( botaoSelecionadoAnteriormente !== null ){
         //remove a classe selecionado desse botao
         document.querySelector('.bebida .selecionado .icon').classList.toggle('icons')
+        
         botaoSelecionadoAnteriormente.classList.remove('selecionado');
     }
     
@@ -66,6 +64,7 @@ function selecionarbebida(bebidaselecionado){
     
     // adiciona a classe selecionado
     botao.classList.toggle('selecionado');
+    bebida = document.querySelector('.bebida .selecionado .h4').innerHTML;
     document.querySelector('.bebida .selecionado .icon').classList.remove('icons');
     x3=1;
     if (bebidaselecionado==='#coca'){
@@ -82,7 +81,8 @@ function selecionarsobremesa(sobremesaselecionado){
     // se existir botao selecionado, 
     if ( botaoSelecionadoAnteriormente !== null ){
         //remove a classe selecionado desse botao
-        document.querySelector('.sobremesa .selecionado .icon').classList.toggle('icons')
+        document.querySelector('.sobremesa .selecionado .icon').classList.toggle('icons');
+        
         botaoSelecionadoAnteriormente.classList.remove('selecionado');
     }
     
@@ -92,6 +92,8 @@ function selecionarsobremesa(sobremesaselecionado){
     
     // adiciona a classe selecionado
     botao.classList.toggle('selecionado');
+    sobremesa = document.querySelector('.sobremesa .selecionado .h4').innerHTML;
+    console.log(sobremesa);
     document.querySelector('.sobremesa .selecionado .icon').classList.remove('icons');
     x4=1;
     if (sobremesaselecionado==='#pudim'){
@@ -106,17 +108,21 @@ function selecionarsobremesa(sobremesaselecionado){
 
 function finalizar(){
     valortotal = valorprato+valorbebida+valorsobremesa;
-    x1=x0-(x2+x3+x4);/* contador de items restantes para selecionar */
+    
+    
     conteudofecharpedido = "Selecione os 3 itens para fechar o pedido";
     document.getElementById("fecharpedido").innerHTML = conteudofecharpedido;
 if(valorprato>0&valorbebida>0&valorsobremesa>0){
     valortotal = valorprato+valorbebida+valorsobremesa;
     document.getElementById("fecharpedido").innerHTML = "Fechar pedido";
-    document.getElementById("finalizarpedido").style.backgroundColor = "#32b72F";
+    document.getElementById("finalizarpedido").style.backgroundColor = "green";
     document.getElementById("finalizarpedido").disabled = false;
 
 }}
 function finalizarpedido(){
+    let msg = 'Olá, gostaria de fazer o pedido:%20- Prato: ' + prato + '- Bebida: ' + bebida + '- Sobremesa: ' + sobremesa + 'Total: R$ '+valortotal;
+    let wpplink = "https://api.whatsapp.com/send?phone=5571991137877" + "&text=" + msg;
+  window.open(wpplink);
 
 
 
