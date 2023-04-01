@@ -13,80 +13,95 @@ let x3=0;
 let x4=0;
 let conteudofecharpedido = "Selecione os " +x1+ " item(s) para fechar o pedido";
 document.getElementById("fecharpedido").innerHTML = conteudofecharpedido;
-function selecionarfrango(){
-    document.getElementById("frango").style.borderColor = "green";
-    document.getElementById("carne").style.borderColor = "white";
-    document.getElementById("peixe").style.borderColor = "white";
-    prato = "frango";
-    valorprato = 20;
-    x2 = 1; 
-   
-}
-function selecionarcarne() {
-    document.getElementById("carne").style.borderColor = "green";
-    document.getElementById("frango").style.borderColor = "white";
-    document.getElementById("peixe").style.borderColor = "white";
-    prato = "carne";
-    valorprato = 30;
-    x2 = 1; 
-}
-function selecionarpeixe() {
-    document.getElementById("peixe").style.borderColor = "green";
-    document.getElementById("frango").style.borderColor = "white";
-    document.getElementById("carne").style.borderColor = "white";
-    prato = "peixe";
-    valorprato = 35;
-    x2 = 1; 
-}
-
-function selecionarcoca(){
-    document.getElementById("coca").style.borderColor = "green";
-    document.getElementById("suco").style.borderColor = "white";
-    document.getElementById("agua").style.borderColor = "white";
-    bebida = "coca";
-    valorbebida = 6.5;
-    x3 = 1;
-}
-function selecionarsuco() {
-    document.getElementById("suco").style.borderColor = "green";
-    document.getElementById("coca").style.borderColor = "white";
-    document.getElementById("agua").style.borderColor = "white";
-    bebida = "suco";
-    valorbebida = 10;
-    x3 = 1;
-}
-function selecionaragua() {
-    document.getElementById("agua").style.borderColor = "green";
-    document.getElementById("suco").style.borderColor = "white";
-    document.getElementById("coca").style.borderColor = "white";
-    bebida = "agua";
-    valorbebida = 4;
-    x3 = 1;
+function selecionarprato(pratoselecionado){
+    const botaoSelecionadoAnteriormente = document.querySelector('.prato .selecionado');
+    console.log(botaoSelecionadoAnteriormente);
+    // se existir botao selecionado, 
+    if ( botaoSelecionadoAnteriormente !== null ){
+        //remove a classe selecionado desse botao
+        document.querySelector('.prato .selecionado .icon').classList.toggle('icons');
+        botaoSelecionadoAnteriormente.classList.remove('selecionado');
+        
+    }
+    
+    
+    // buscar o novo botqo clicado
+    const botao = document.querySelector(pratoselecionado);
+    //const icon = document.querySelector(pratoselecionado ,'.icons');
+    //icon = document.querySelector(icon);
+    //console.log(icon);
+    //icon.classList.toggle('icons').lastElementChild;
+    //botao.classList.toggle('icons').lastElementChild;
+    // adiciona a classe selecionado
+    botao.classList.toggle('selecionado');
+    document.querySelector('.prato .selecionado .icon').classList.remove('icons');
+    //icon.classList.toggle('icon');
+    x2=1;
+    if (pratoselecionado==='#frango'){
+        valorprato=20.9;
+    }else if(pratoselecionado==='#carne'){
+        valorprato=30.9;
+    }else if(pratoselecionado==='#peixe'){
+        valorprato=35.9;
+    }
+    
+    console.log(valorprato);
+    
 }
 
-function selecionarpudim(){
-    document.getElementById("pudim").style.borderColor = "green";
-    document.getElementById("churros").style.borderColor = "white";
-    document.getElementById("brigadeiro").style.borderColor = "white";
-    sobremesa = "pudim";
-    valorsobremesa = 6.5;
-    x4 = 1;
+
+function selecionarbebida(bebidaselecionado){
+    const botaoSelecionadoAnteriormente = document.querySelector('.bebida .selecionado');
+    console.log(botaoSelecionadoAnteriormente);
+    // se existir botao selecionado, 
+    if ( botaoSelecionadoAnteriormente !== null ){
+        //remove a classe selecionado desse botao
+        document.querySelector('.bebida .selecionado .icon').classList.toggle('icons')
+        botaoSelecionadoAnteriormente.classList.remove('selecionado');
+    }
+    
+    
+    // buscar o novo botqo clicado
+    const botao = document.querySelector(bebidaselecionado);
+    
+    // adiciona a classe selecionado
+    botao.classList.toggle('selecionado');
+    document.querySelector('.bebida .selecionado .icon').classList.remove('icons');
+    x3=1;
+    if (bebidaselecionado==='#coca'){
+        valorbebida=6.5;
+    }else if(bebidaselecionado==='#suco'){
+        valorbebida=10;
+    }else if(bebidaselecionado==='#agua'){
+        valorbebida=4;
+    }
 }
-function selecionarbrigadeiro() {
-    document.getElementById("brigadeiro").style.borderColor = "green";
-    document.getElementById("pudim").style.borderColor = "white";
-    document.getElementById("churros").style.borderColor = "white";
-    sobremesa = "brigadeiro";
-    valorsobremesa = 5;
-    x4 = 1;
-}
-function selecionarchurros() {
-    document.getElementById("churros").style.borderColor = "green";
-    document.getElementById("brigadeiro").style.borderColor = "white";
-    document.getElementById("pudim").style.borderColor = "white";
-    sobremesa = "churros";
-    valorsobremesa = 4;
-    x4 = 1;
+function selecionarsobremesa(sobremesaselecionado){
+    const botaoSelecionadoAnteriormente = document.querySelector('.sobremesa .selecionado');
+    console.log(botaoSelecionadoAnteriormente);
+    // se existir botao selecionado, 
+    if ( botaoSelecionadoAnteriormente !== null ){
+        //remove a classe selecionado desse botao
+        document.querySelector('.sobremesa .selecionado .icon').classList.toggle('icons')
+        botaoSelecionadoAnteriormente.classList.remove('selecionado');
+    }
+    
+    
+    // buscar o novo botqo clicado
+    const botao = document.querySelector(sobremesaselecionado);
+    
+    // adiciona a classe selecionado
+    botao.classList.toggle('selecionado');
+    document.querySelector('.sobremesa .selecionado .icon').classList.remove('icons');
+    x4=1;
+    if (sobremesaselecionado==='#pudim'){
+        valorsobremesa=6.5;
+    }else if(sobremesaselecionado==='#brigadeiro'){
+        valorsobremesa=5;
+    }else if(sobremesaselecionado==='#churros'){
+        valorsobremesa=4;
+    }
+
 }
 
 function finalizar(){

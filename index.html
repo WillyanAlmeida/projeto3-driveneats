@@ -18,74 +18,84 @@
     <div class="main">
         <h3>Primeiro, seu prato</h3>
         <div class="prato">
-            <div id="frango" class="produto" onclick="selecionarfrango(); finalizar()">
+            <div id="frango" data-teste="dish" class="produto" onclick="selecionarprato('#frango'); finalizar()">
                 <img src="./img/frango_yin_yang.png" />
-                <h4>Frango Yin-Yang</h4>
+                <h4 data-teste="item-name">Frango Yin-Yang</h4>
                 <p>Um pouco de batata, um pouco de Salada</p>
-                <p>R$ 20,90</p>
+                <p class="preco" data-teste="item-price"> R$ 20,90</p>
+                <ion-icon class="icon icons" name="checkmark-circle"></ion-icon>
             </div>
-            <div id="carne" class="produto" onclick="selecionarcarne(); finalizar()">
+            <div id="carne" data-teste="dish" class="produto" onclick="selecionarprato('#carne'); finalizar()">
                 <img src="./img/carne.jpg" />
-                <h4>Carne e Salada</h4>
+                <h4 data-teste="item-name">Carne e Salada</h4>
                 <p>Um pouco de batata, um pouco de Salada</p>
-                <p>R$ 30,90</p>
+                <p class="preco" data-teste="item-price">R$ 30,90</p>
+                <ion-icon class="icon icons" name="checkmark-circle"></ion-icon>
             </div>
-            <div id="peixe" class="produto" onclick="selecionarpeixe(); finalizar()">
+            <div id="peixe" data-teste="dish" class="produto" onclick="selecionarprato('#peixe') ; finalizar()">
                 <img src="./img/peixe.jpg" />
-                <h4>Peixe e Salada</h4>
+                <h4 data-teste="item-name">Peixe e Salada</h4>
                 <p>Um pouco de batata, um pouco de Salada</p>
-                <p>R$ 35,90</p>
+                <p class="preco" data-teste="item-price">R$ 35,90</p>
+                <ion-icon class="icon icons" name="checkmark-circle"></ion-icon>
             </div>
         </div>
         <h3>Agora sua bebida</h3>
         <div class="bebida">
-            <div id="coca" class="produto" onclick="selecionarcoca(); finalizar()">
+            <div id="coca" data-teste="drink" class="produto" onclick="selecionarbebida('#coca'); finalizar()">
                 <img src="./img/coca-cola.png" />
-                <h4>Coca-cola</h4>
+                <h4 data-teste="item-name">Coca-cola</h4>
                 <p>Normal ou Zero</p>
-                <p><strong>R$ 6,50</strong></p>
+                <p class="preco" data-teste="item-price">R$ 6,50</p>
+                <ion-icon class="icon icons" name="checkmark-circle"></ion-icon>
             </div>
-            <div id="suco" class="produto" onclick="selecionarsuco();finalizar()">
+            <div id="suco" data-teste="drink" class="produto" onclick="selecionarbebida('#suco');finalizar()">
                 <img src="./img/suco.jpeg" />
-                <h4>Suco da fruta</h4>
-                <p>Fruta da estação</p>
-                <p><strong>R$ 10,00</strong></p>
+                <h4 data-teste="item-name">Suco da fruta</h4>
+                <p>Fruta da estacão</p>
+                <p class="preco" data-teste="item-price">R$ 10,00</p>
+                <ion-icon class="icon icons" name="checkmark-circle"></ion-icon>
             </div>
-            <div id="agua" class="produto" onclick="selecionaragua();finalizar()">
+            <div id="agua" data-teste="drink" class="produto" onclick="selecionarbebida('#agua');finalizar()">
                 <img src="./img/agua.jpeg" />
-                <h4>Àgua</h4>
+                <h4 data-teste="item-name">Àgua</h4>
                 <p>Normal ou c/ gás</p>
-                <p><strong>R$ 4,00</strong></p>
+                <p class="preco" data-teste="item-price">R$ 4,00</p>
+                <ion-icon class="icon icons" name="checkmark-circle"></ion-icon>
             </div>
         </div>
         <h3>Por fim, sua sobremesa</h3>
         <div class="sobremesa">
-            <div id="pudim" class="produto" onclick="selecionarpudim();finalizar()">
+            <div id="pudim" data-teste="dessert" class="produto" onclick="selecionarsobremesa('#pudim');finalizar()">
                 <img src="./img/pudim.png" />
-                <h4>Pudim</h4>
+                <h4 data-teste="item-name">Pudim</h4>
                 <p>Apenas pudim</p>
-                <p><strong>R$ 6,50</strong></p>
+                <p class="preco" data-teste="item-price">R$ 6,50</p>
+                <ion-icon class="icon icons" name="checkmark-circle"></ion-icon>
             </div>
-            <div id="brigadeiro" class="produto" onclick="selecionarbrigadeiro();finalizar()">
+            <div id="brigadeiro" data-teste="dessert" class="produto" onclick="selecionarsobremesa('#brigadeiro');finalizar()">
                 <img src="./img/brigadeiro.jpeg" />
-                <h4>Brigadeiro</h4>
-                <p>Chocolate 70% cacau</p>
-                <p><strong>R$ 5,00</strong></p>
+                <h4 data-teste="item-name">Brigadeiro</h4>
+                <p >Chocolate 70% cacau</p>
+                <p class="preco" data-teste="item-price">R$ 5,00</p>
+                <ion-icon class="icon icons" name="checkmark-circle"></ion-icon>
             </div>
-            <div id="churros" class="produto" onclick="selecionarchurros();finalizar()">
+            <div id="churros" data-teste="dessert" class="produto" onclick="selecionarsobremesa('#churros');finalizar()">
                 <img src="./img/churros.jpeg" />
-                <h4>Churros</h4>
+                <h4 data-teste="item-name">Churros</h4>
                 <p>Recheio de doce de leite</p>
-                <p><strong>R$ 4,00</strong></p>
+                <p class="preco" data-teste="item-price">R$ 4,00</p>
+                <ion-icon class="icon icons" name="checkmark-circle"></ion-icon>
             </div>
         </div>
     </div>
     <div class="base">
-        <button id="finalizarpedido" class="finalizar" onclick="finalizarpedido()" disabled>
+        <button data-teste="order-btn" id="finalizarpedido" class="finalizar" onclick="finalizarpedido()" disabled>
             <p id="fecharpedido"></p>
             
         </button>
     </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="./script.js"></script>
 </body>
 
