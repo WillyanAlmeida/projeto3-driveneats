@@ -11,7 +11,7 @@ let x1=3;
 let x2=0;
 let x3=0;
 let x4=0;
-let conteudofecharpedido = "Selecione os " +x1+ " item(s) para fechar o pedido";
+let conteudofecharpedido = "Selecione os 3 itens para fechar o pedido";
 document.getElementById("fecharpedido").innerHTML = conteudofecharpedido;
 function selecionarprato(pratoselecionado){
     const botaoSelecionadoAnteriormente = document.querySelector('.prato .selecionado');
@@ -107,12 +107,12 @@ function selecionarsobremesa(sobremesaselecionado){
 function finalizar(){
     valortotal = valorprato+valorbebida+valorsobremesa;
     x1=x0-(x2+x3+x4);/* contador de items restantes para selecionar */
-    conteudofecharpedido = "Selecione os " +x1+ " item(s) restantes para fechar o pedido Valor total R$ "+valortotal;
+    conteudofecharpedido = "Selecione os 3 itens para fechar o pedido";
     document.getElementById("fecharpedido").innerHTML = conteudofecharpedido;
 if(valorprato>0&valorbebida>0&valorsobremesa>0){
     valortotal = valorprato+valorbebida+valorsobremesa;
-    document.getElementById("fecharpedido").innerHTML = "finalizar pedido! " + "Valor total: R$"+valortotal;
-    document.getElementById("finalizarpedido").style.backgroundColor = "green";
+    document.getElementById("fecharpedido").innerHTML = "Fechar pedido";
+    document.getElementById("finalizarpedido").style.backgroundColor = "#32b72F";
     document.getElementById("finalizarpedido").disabled = false;
 
 }}
