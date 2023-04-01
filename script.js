@@ -120,9 +120,10 @@ if(valorprato>0&valorbebida>0&valorsobremesa>0){
 
 }}
 function finalizarpedido(){
-    let msg = 'Olá, gostaria de fazer o pedido:%20- Prato: ' + prato + '- Bebida: ' + bebida + '- Sobremesa: ' + sobremesa + 'Total: R$ '+valortotal;
+    let msg = 'Olá, gostaria de fazer o pedido:'+'\r\n'+
+    '- Prato: ' + prato + '\n- Bebida: ' + bebida + '\n- Sobremesa: ' + sobremesa + '\nTotal: R$ '+valortotal;
     let wpplink = "https://api.whatsapp.com/send?phone=5571991137877" + "&text=" + msg;
-  window.open(wpplink);
+  window.open(wpplink,"_blank");
 
 
 
