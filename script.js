@@ -36,11 +36,11 @@ function selecionarprato(pratoselecionado) {
     //icon.classList.toggle('icon');
     x2 = 1;
     if (pratoselecionado === '#frango') {
-        valorprato = 20.9;
+        valorprato = 20;
     } else if (pratoselecionado === '#carne') {
-        valorprato = 30.9;
+        valorprato = 30;
     } else if (pratoselecionado === '#peixe') {
-        valorprato = 35.9;
+        valorprato = 35;
     }
 
 
@@ -68,7 +68,7 @@ function selecionarbebida(bebidaselecionado) {
     document.querySelector('.bebida .selecionado .icon').classList.remove('icons');
     x3 = 1;
     if (bebidaselecionado === '#coca') {
-        valorbebida = 6.5;
+        valorbebida = 6.50;
     } else if (bebidaselecionado === '#suco') {
         valorbebida = 10;
     } else if (bebidaselecionado === '#agua') {
@@ -97,7 +97,7 @@ function selecionarsobremesa(sobremesaselecionado) {
     document.querySelector('.sobremesa .selecionado .icon').classList.remove('icons');
     x4 = 1;
     if (sobremesaselecionado === '#pudim') {
-        valorsobremesa = 6.5;
+        valorsobremesa = 6.50;
     } else if (sobremesaselecionado === '#brigadeiro') {
         valorsobremesa = 5;
     } else if (sobremesaselecionado === '#churros') {
@@ -121,8 +121,14 @@ function finalizarpedido() {
     if (valorprato > 0 & valorbebida > 0 & valorsobremesa > 0){
     let msg = 'Olá, gostaria de fazer o pedido:' + '\r\n' +
         '- Prato: ' + prato + '\n- Bebida: ' + bebida + '\n- Sobremesa: ' + sobremesa + '\nTotal: R$ ' + valortotal;
-        msg =  window.encodeURIComponent(msg);
-    let wpplink = "https://api.whatsapp.com/send?phone=5571991137877" + "&text=" + msg;
+        let msg1 = msg.replace('.',',');
+        if(msg1 === msg){
+            msg1=msg+',00';
+
+        } else{ msg1 = msg1+'0'}
+        msg1 =  window.encodeURIComponent(msg1);
+        
+    let wpplink = "https://api.whatsapp.com/send?phone=5571991137877" + "&text=" + msg1;
     window.open(wpplink, "_blank");
     }
 
