@@ -6,35 +6,26 @@ let valorprato = 0;
 let valorbebida = 0;
 let valorsobremesa = 0;
 let valortotal = 0;
-const x0 = 3;
-let x1 = 3;
-let x2 = 0;
-let x3 = 0;
-let x4 = 0;
-let conteudofecharpedido = "Selecione os 3 itens para fechar o pedido";
+let conteudofecharpedido = "Selecione os 3 itens</br>" + "para fechar o pedido";
 document.getElementById("fecharpedido").innerHTML = conteudofecharpedido;
 function selecionarprato(pratoselecionado) {
     const botaoSelecionadoAnteriormente = document.querySelector('.prato .selecionado');
     console.log(botaoSelecionadoAnteriormente);
     // se existir botao selecionado, 
     if (botaoSelecionadoAnteriormente !== null) {
-        //remove a classe selecionado desse botao
+        //remove o icon do selecionado
         document.querySelector('.prato .selecionado .icon').classList.toggle('icons');
+        //remove o selecionado do botão
         botaoSelecionadoAnteriormente.classList.remove('selecionado');
-
     }
-
-
-    // buscar o novo botqo clicado
+    // buscar o novo botao clicado
     const botao = document.querySelector(pratoselecionado);
-
     // adiciona a classe selecionado
     botao.classList.toggle('selecionado');
+    //adiciona o prato selecionado a uma variavel
     prato = document.querySelector('.prato .selecionado .h4').innerHTML;
-    console.log(prato);
+    //adiciona o icon ao produto selecionado
     document.querySelector('.prato .selecionado .icon').classList.remove('icons');
-    //icon.classList.toggle('icon');
-    x2 = 1;
     if (pratoselecionado === '#frango') {
         valorprato = 20;
     } else if (pratoselecionado === '#carne') {
@@ -42,8 +33,6 @@ function selecionarprato(pratoselecionado) {
     } else if (pratoselecionado === '#peixe') {
         valorprato = 35;
     }
-
-
 }
 
 
@@ -52,21 +41,19 @@ function selecionarbebida(bebidaselecionado) {
     console.log(botaoSelecionadoAnteriormente);
     // se existir botao selecionado, 
     if (botaoSelecionadoAnteriormente !== null) {
-        //remove a classe selecionado desse botao
+        //remove o icon do selecionado
         document.querySelector('.bebida .selecionado .icon').classList.toggle('icons')
-
+        //remove o selecionado do botão
         botaoSelecionadoAnteriormente.classList.remove('selecionado');
     }
-
-
-    // buscar o novo botqo clicado
+    // buscar o novo botao clicado
     const botao = document.querySelector(bebidaselecionado);
-
     // adiciona a classe selecionado
     botao.classList.toggle('selecionado');
+    //adiciona a bebida selecionada a uma variavel
     bebida = document.querySelector('.bebida .selecionado .h4').innerHTML;
+    //adiciona icon a bebida selecionada
     document.querySelector('.bebida .selecionado .icon').classList.remove('icons');
-    x3 = 1;
     if (bebidaselecionado === '#coca') {
         valorbebida = 6.50;
     } else if (bebidaselecionado === '#suco') {
@@ -80,22 +67,19 @@ function selecionarsobremesa(sobremesaselecionado) {
     console.log(botaoSelecionadoAnteriormente);
     // se existir botao selecionado, 
     if (botaoSelecionadoAnteriormente !== null) {
-        //remove a classe selecionado desse botao
+        //remove o icon do selecionado
         document.querySelector('.sobremesa .selecionado .icon').classList.toggle('icons');
-
+        //remove o selecionado do botao
         botaoSelecionadoAnteriormente.classList.remove('selecionado');
     }
-
-
-    // buscar o novo botqo clicado
+    // buscar o novo botao clicado
     const botao = document.querySelector(sobremesaselecionado);
-
     // adiciona a classe selecionado
     botao.classList.toggle('selecionado');
+    //adiciona o produto selecionado a uma variavel
     sobremesa = document.querySelector('.sobremesa .selecionado .h4').innerHTML;
-    console.log(sobremesa);
+    //adiciona icon ao produto selecionado
     document.querySelector('.sobremesa .selecionado .icon').classList.remove('icons');
-    x4 = 1;
     if (sobremesaselecionado === '#pudim') {
         valorsobremesa = 6.50;
     } else if (sobremesaselecionado === '#brigadeiro') {
@@ -103,35 +87,28 @@ function selecionarsobremesa(sobremesaselecionado) {
     } else if (sobremesaselecionado === '#churros') {
         valorsobremesa = 4;
     }
-
 }
 
 function finalizar() {
     valortotal = valorprato + valorbebida + valorsobremesa;
-
     if (valorprato > 0 & valorbebida > 0 & valorsobremesa > 0) {
-        valortotal = valorprato + valorbebida + valorsobremesa;
         document.getElementById("fecharpedido").innerHTML = "Fechar pedido";
         document.getElementById("finalizarpedido").style.backgroundColor = "green";
         document.getElementById("finalizarpedido").disabled = false;
-
     }
 }
+
 function finalizarpedido() {
-    if (valorprato > 0 & valorbebida > 0 & valorsobremesa > 0){
-    let msg = 'Olá, gostaria de fazer o pedido:' + '\r\n' +
-        '- Prato: ' + prato + '\n- Bebida: ' + bebida + '\n- Sobremesa: ' + sobremesa + '\nTotal: R$ ' + valortotal;
-        let msg1 = msg.replace('.',',');
-        if(msg1 === msg){
-            msg1=msg+',00';
-
-        } else{ msg1 = msg1+'0'}
-        msg1 =  window.encodeURIComponent(msg1);
-        
-    let wpplink = "https://api.whatsapp.com/send?phone=5571991137877" + "&text=" + msg1;
-    window.open(wpplink, "_blank");
+    if (valorprato > 0 & valorbebida > 0 & valorsobremesa > 0) {
+        let msg = 'Olá, gostaria de fazer o pedido:' + '\r\n' +
+            '- Prato: ' + prato + '\n- Bebida: ' + bebida + '\n- Sobremesa: ' + sobremesa + '\nTotal: R$ ' + valortotal;
+        let msg1 = msg.replace('.', ',');
+        if (msg1 === msg) {
+            msg1 = msg + ',00';
+        } else { msg1 = msg1 + '0' }
+        msg1 = window.encodeURIComponent(msg1);
+        let wpplink = "https://api.whatsapp.com/send?phone=5571991137877" + "&text=" + msg1;
+        window.open(wpplink, "_blank");
     }
-
-
 }
 

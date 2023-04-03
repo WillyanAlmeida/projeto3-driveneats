@@ -150,12 +150,12 @@ h4 {
   width: 365px;
   height: 61px;
   background-color: #cbcbcb;
-  color: #cbcbcb;
+  border:none;
+  border-color: #cbcbcb;
   border-radius: 50px;
-
   display: flex;
+  align-items: center;
   text-align: center;
-  flex-direction: column;
   justify-content: center;
 }
 
