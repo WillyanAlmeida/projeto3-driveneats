@@ -6,7 +6,7 @@ let valorprato = 0;
 let valorbebida = 0;
 let valorsobremesa = 0;
 let valortotal = 0;
-let conteudofecharpedido = "Selecione os 3 itens</br>" + "para fechar o pedido";
+let conteudofecharpedido = "Selecione os 3 itens</br>" + " para fechar o pedido";
 document.getElementById("fecharpedido").innerHTML = conteudofecharpedido;
 function selecionarprato(pratoselecionado) {
     const botaoSelecionadoAnteriormente = document.querySelector('.prato .selecionado');
